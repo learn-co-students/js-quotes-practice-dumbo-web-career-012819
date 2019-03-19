@@ -45,6 +45,19 @@ const deleteQuote = id => {
   })
 }
 
+const increaseLike = (id, currentLikes) => {
+  return fetch(`http://localhost:3000/quotes/${id}`, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    },
+    body: JSON.stringify({
+      likes: currentLikes
+    })
+  }).then(response => response.json())
+}
+
 
 // event listeners
 newQuoteForm.addEventListener('submit', e => {
@@ -55,13 +68,25 @@ newQuoteForm.addEventListener('submit', e => {
 });
 
 ulTag.addEventListener('click', e => {
+  let closestLi = e.target.closest('li');
   if (e.target.className === 'btn-danger') {
-    let closestLi = e.target.closest('li');
     deleteQuote(closestLi.dataset.id).then(response => {
       if(response.ok) {
         closestLi.remove();
       }
     })
+  } else if (e.target.className === 'btn-success') {
+    // found current likes
+    let likeAmountonDOM = e.target.querySelector('span');
+    let currentLikes = parseInt(e.target.querySelector('span').innerText) + 1;
+    // update backend
+    increaseLike(closestLi.dataset.id, currentLikes)
+      .then(updatedQuoteObj => {
+        if (!!updatedQuoteObj) {
+          // update DOM
+          likeAmountonDOM.innerText = currentLikes;
+        }
+      })
   }
 });
 
