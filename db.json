@@ -3,13 +3,13 @@
     {
       "id": 1,
       "quote": "Don't count the days, make the days count.",
-      "likes": 9,
+      "likes": 3,
       "author": "Mike Tyson"
     },
     {
       "id": 2,
       "quote": "There are no secrets to success. It is the result of preparation, hard work, and learning from failure.",
-      "likes": 4,
+      "likes": 5,
       "author": "Collin Powell"
     },
     {
@@ -47,6 +47,12 @@
       "author": "Snoop Dogg",
       "likes": 3,
       "id": 8
+    },
+    {
+      "quote": "Quack quack quack",
+      "author": "Duck",
+      "id": 9,
+      "likes": 2
     }
   ]
 }
