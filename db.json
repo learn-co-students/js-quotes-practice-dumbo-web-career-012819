@@ -27,14 +27,20 @@
     {
       "id": 5,
       "quote": "Success is not final, failure is not fatal: it is the courage to continue that counts.",
-      "likes": 3,
+      "likes": 4,
       "author": "Winston Churchhill"
     },
     {
-      "quote": "cool",
-      "author": "jack",
-      "likes": 17,
+      "quote": "hhhhhhh",
+      "author": "andyyre",
+      "likes": 9,
       "id": 6
+    },
+    {
+      "quote": "bullshit",
+      "author": "crazy ady",
+      "likes": 6,
+      "id": 7
     }
   ]
 }
